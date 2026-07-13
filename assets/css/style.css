@@ -47,6 +47,8 @@ body {
 
 body.menu-open {
   position: fixed;
+  right: 0;
+  left: 0;
   width: 100%;
   overflow: hidden;
 }
@@ -287,9 +289,11 @@ mark {
 }
 
 @supports (backdrop-filter: blur(12px)) {
-  .site-header {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: saturate(145%) blur(14px);
+  @media (min-width: 769px) {
+    .site-header {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: saturate(145%) blur(14px);
+    }
   }
 }
 
@@ -378,14 +382,14 @@ mark {
 }
 
 .mobile-menu {
-  position: absolute;
+  position: fixed;
   z-index: 2;
-  top: 100%;
+  top: var(--header-height);
   right: 0;
+  bottom: 0;
   left: 0;
   display: flex;
-  height: calc(100dvh - var(--header-height));
-  max-height: calc(100dvh - var(--header-height));
+  min-height: 0;
   flex-direction: column;
   padding: 18px 16px calc(24px + env(safe-area-inset-bottom));
   overflow-x: hidden;
@@ -395,13 +399,6 @@ mark {
   background: var(--color-white);
   box-shadow: 0 24px 45px rgba(17, 17, 17, 0.14);
   -webkit-overflow-scrolling: touch;
-}
-
-@supports not (height: 100dvh) {
-  .mobile-menu {
-    height: calc(100vh - var(--header-height));
-    max-height: calc(100vh - var(--header-height));
-  }
 }
 
 .mobile-menu[hidden] {

@@ -1,0 +1,15 @@
+JETT İSTANBUL TAKSİ — DOĞRUDAN KOPYALAMA
+
+1) Bu ZIP içindeki bütün dosya ve klasörleri VS Code'da açık olan jetistanbultaksi klasörünün köküne kopyalayın.
+2) Windows sorarsa "Hedefteki dosyaları değiştir" seçeneğini kullanın.
+3) index.html, CNAME, .nojekyll ve assets klasörü aynı seviyede olmalıdır.
+4) VS Code terminalinde sırasıyla çalıştırın:
+
+   git add .
+   git commit -m "JETT site mobil menü ve tüm hatalar düzeltildi"
+   git push origin main
+
+5) GitHub: Settings > Pages > Deploy from a branch > main > /(root) seçili kalmalıdır.
+6) CNAME dosyasını silmeyin. DNS ve nameserver ayarlarını tekrar değiştirmeyin.
+7) Yayın tamamlanınca siteyi gizli sekmede açın:
+   https://jetistanbultaksi.com.tr/?surum=final3

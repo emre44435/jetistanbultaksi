@@ -90,6 +90,11 @@
     };
 
     if (menuToggle && mobileMenu) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Menüyü aç');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.hidden = true;
+
       menuToggle.addEventListener('click', () => {
         if (isMenuOpen()) closeMenu(true);
         else openMenu();
@@ -139,6 +144,10 @@
       }
 
       window.addEventListener('pageshow', () => {
+        if (isMenuOpen()) closeMenu(false);
+      });
+
+      window.addEventListener('hashchange', () => {
         if (isMenuOpen()) closeMenu(false);
       });
     }

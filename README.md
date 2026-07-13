@@ -6,6 +6,8 @@ JETT İstanbul Taksi için hazırlanmış, tek sayfalık, mobil uyumlu ve doğru
 
 ```text
 /
+├── .nojekyll
+├── CNAME
 ├── index.html
 ├── 404.html
 ├── robots.txt
@@ -37,6 +39,22 @@ JETT İstanbul Taksi için hazırlanmış, tek sayfalık, mobil uyumlu ve doğru
 ## Mobil Menü ve Uyumluluk Düzeltmesi
 
 Bu sürümde mobil hamburger menü yeniden düzenlenmiştir. Menü artık 360–768 px genişliklerde tam ekran yüksekliğinde açılır, iOS/Android kaydırma kilidi uygular, Escape tuşuyla kapanır, menü bağlantısına dokununca otomatik kapanır ve sabit alt iletişim çubuğuyla çakışmaz. CSS ve JavaScript dosyalarında önbellek sürüm parametresi kullanıldığı için GitHub’a yükledikten sonra güncel dosyalar daha hızlı alınır.
+
+## Mevcut GitHub Deposuna Doğrudan Kopyalama
+
+1. Bu ZIP dosyasını bilgisayarınızda açın.
+2. ZIP içindeki **tüm dosya ve klasörleri** VS Code’da açtığınız `jetistanbultaksi` depo klasörünün köküne kopyalayın.
+3. Windows aynı isimli dosyaları sorarsa **Hedefteki dosyaları değiştir** seçeneğini kullanın.
+4. Klasör yapısında `index.html`, `CNAME`, `.nojekyll` ve `assets` doğrudan aynı seviyede kalmalıdır.
+5. VS Code terminalinde sırasıyla çalıştırın:
+
+```bash
+git add .
+git commit -m "Mobil menü ve site hataları düzeltildi"
+git push origin main
+```
+
+`CNAME` dosyası hazırdır ve `jetistanbultaksi.com.tr` alan adını içerir. DNS kayıtlarını yeniden değiştirmeniz gerekmez.
 
 ## Yayınlama
 
