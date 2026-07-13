@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jetistanbultaksi.com.tr/sitemap.xml

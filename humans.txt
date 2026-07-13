@@ -1,0 +1,8 @@
+/* TEAM */
+Site: JETT İstanbul Taksi
+Domain: https://jetistanbultaksi.com.tr/
+Language: Turkish
+
+/* TECHNOLOGY */
+HTML5, CSS3, Vanilla JavaScript
+No external framework, font, icon library or CDN dependency.
