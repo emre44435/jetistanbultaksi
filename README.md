@@ -33,6 +33,11 @@ JETT İstanbul Taksi için hazırlanmış, tek sayfalık, mobil uyumlu ve doğru
         └── icon-512.png
 ```
 
+
+## Mobil Menü ve Uyumluluk Düzeltmesi
+
+Bu sürümde mobil hamburger menü yeniden düzenlenmiştir. Menü artık 360–768 px genişliklerde tam ekran yüksekliğinde açılır, iOS/Android kaydırma kilidi uygular, Escape tuşuyla kapanır, menü bağlantısına dokununca otomatik kapanır ve sabit alt iletişim çubuğuyla çakışmaz. CSS ve JavaScript dosyalarında önbellek sürüm parametresi kullanıldığı için GitHub’a yükledikten sonra güncel dosyalar daha hızlı alınır.
+
 ## Yayınlama
 
 ### GitHub’a yükleme

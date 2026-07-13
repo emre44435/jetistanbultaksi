@@ -34,8 +34,8 @@
 
   <link rel="preload" as="image" href="assets/images/hero-istanbul.avif" type="image/avif" media="(min-width: 769px)" fetchpriority="high">
   <link rel="preload" as="image" href="assets/images/hero-istanbul-mobile.avif" type="image/avif" media="(max-width: 768px)" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=20260713-2">
+  <script src="assets/js/main.js?v=20260713-2" defer></script>
 
   <script type="application/ld+json">
   {
@@ -205,14 +205,14 @@
           <svg aria-hidden="true"><use href="#icon-phone"></use></svg>
           <span>Hemen Ara</span>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menüyü aç" data-menu-toggle>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-haspopup="true" aria-label="Menüyü aç" data-menu-toggle>
           <svg class="menu-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
           <svg class="close-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
         </button>
       </div>
     </div>
 
-    <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" hidden>
       <nav class="mobile-nav" aria-label="Mobil menü">
         <a href="#ana-sayfa">Ana Sayfa</a>
         <a href="#hizmetler">Hizmetler</a>

@@ -46,6 +46,8 @@ body {
 }
 
 body.menu-open {
+  position: fixed;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -339,20 +341,32 @@ mark {
   justify-content: center;
   border-radius: 12px;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .menu-toggle {
+  position: relative;
+  z-index: 3;
   color: var(--color-black);
   background: var(--color-warm-gray);
+}
+
+.menu-toggle:hover {
+  background: #ebe8e1;
 }
 
 .menu-toggle svg {
   width: 25px;
   height: 25px;
+  pointer-events: none;
 }
 
 .menu-toggle .close-icon {
   display: none;
+}
+
+.menu-toggle[aria-expanded="true"] {
+  background: var(--color-yellow);
 }
 
 .menu-toggle[aria-expanded="true"] .menu-icon {
@@ -364,19 +378,38 @@ mark {
 }
 
 .mobile-menu {
-  position: fixed;
-  z-index: 990;
-  top: var(--header-height);
+  position: absolute;
+  z-index: 2;
+  top: 100%;
   right: 0;
-  bottom: 0;
   left: 0;
-  padding: 20px 16px calc(24px + env(safe-area-inset-bottom));
+  display: flex;
+  height: calc(100dvh - var(--header-height));
+  max-height: calc(100dvh - var(--header-height));
+  flex-direction: column;
+  padding: 18px 16px calc(24px + env(safe-area-inset-bottom));
+  overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--color-line);
   background: var(--color-white);
+  box-shadow: 0 24px 45px rgba(17, 17, 17, 0.14);
+  -webkit-overflow-scrolling: touch;
+}
+
+@supports not (height: 100dvh) {
+  .mobile-menu {
+    height: calc(100vh - var(--header-height));
+    max-height: calc(100vh - var(--header-height));
+  }
 }
 
 .mobile-menu[hidden] {
-  display: none;
+  display: none !important;
+}
+
+body.menu-open .site-header {
+  background: var(--color-white);
 }
 
 .mobile-nav {
@@ -385,18 +418,37 @@ mark {
 }
 
 .mobile-nav a {
+  position: relative;
   display: flex;
-  min-height: 56px;
+  min-height: 58px;
   align-items: center;
+  padding-right: 34px;
   border-bottom: 1px solid var(--color-line);
   font-size: 1.04rem;
   font-weight: 750;
 }
 
+.mobile-nav a::after {
+  position: absolute;
+  right: 6px;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  content: "";
+  opacity: 0.42;
+  transform: rotate(45deg);
+}
+
+.mobile-nav a:active {
+  background: var(--color-warm-gray);
+}
+
 .mobile-menu-actions {
   display: grid;
   gap: 12px;
-  margin-top: 22px;
+  margin-top: auto;
+  padding-top: 22px;
 }
 
 .hero {
@@ -1642,6 +1694,14 @@ mark {
   border-top: 1px solid rgba(17, 17, 17, 0.1);
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 -12px 30px rgba(17, 17, 17, 0.1);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+body.menu-open .mobile-contact-bar {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(110%);
 }
 
 .mobile-contact-bar a {
