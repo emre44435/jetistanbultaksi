@@ -1,2 +1,3 @@
 JETT İstanbul Taksi yeni sürüm yayınlama işlemi.
 Yeni sürüm branch üzerinden yayınlandı.
+Yeni temiz dağıtım oluşturuldu.
