@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davetiye-ornek.com/sitemap.xml
+Sitemap: https://jetistanbultaksi.com.tr/sitemap.xml
